@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOI4-Like Map</title>
+    <style>
+        body { text-align: center; }
+        svg { width: 90vw; height: 80vh; border: 1px solid black; }
+        .country { fill: lightgray; stroke: black; stroke-width: 1; }
+        .country:hover { fill: darkgray; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h1>HOI4-Style Map</h1>
+    <svg viewBox="0 0 500 300">
+        <!-- Example countries -->
+        <path id="country1" class="country" d="M50,50 L150,50 L150,150 L50,150 Z" />
+        <path id="country2" class="country" d="M160,50 L260,50 L260,150 L160,150 Z" />
+    </svg>
+    
+    <script>
+        document.querySelectorAll('.country').forEach(country => {
+            country.addEventListener('click', () => {
+                alert(`You clicked on ${country.id}`);
+            });
+        });
+    </script>
+</body>
+</html>
